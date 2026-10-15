@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: ../_site/slides
+  output-dir: ../docs/slides
   render:
     - "*.qmd"
 
