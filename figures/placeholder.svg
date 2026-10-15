@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="300" viewBox="0 0 800 300">
+  <rect width="800" height="300" fill="#1a1a2e"/>
+  <text x="400" y="150" font-family="Helvetica" font-size="28" fill="#e0e0e0" text-anchor="middle">Your figure here — drop PNGs/SVGs in figures/</text>
+  <rect x="60" y="200" width="200" height="40" fill="#4a4a6a" rx="5"/>
+  <rect x="300" y="200" width="200" height="60" fill="#5a5a7a" rx="5"/>
+  <rect x="540" y="200" width="200" height="80" fill="#6a6a8a" rx="5"/>
+</svg>

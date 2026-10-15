@@ -1,0 +1,17 @@
+project:
+  type: website
+  output-dir: ../_site/slides
+  render:
+    - "*.qmd"
+
+website:
+  title: "Presentations"
+
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    hash: true
+    scrollable: true
+    preview-links: auto
+    embed-resources: true
