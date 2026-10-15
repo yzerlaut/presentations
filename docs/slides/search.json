@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "demo-presentation.html#the-workflow",
+    "href": "demo-presentation.html#the-workflow",
+    "title": "Demo — Markdown to Slides",
+    "section": "The workflow",
+    "text": "The workflow\n\nDraft ideas in a daily note (2026-10-15.md) in private-notes\nLift the relevant sections into a .qmd file here\nRun the sync alias on the iPad\nGitHub Actions renders → GitHub Pages shows the deck"
+  },
+  {
+    "objectID": "demo-presentation.html#checklists-highlights-links",
+    "href": "demo-presentation.html#checklists-highlights-links",
+    "title": "Demo — Markdown to Slides",
+    "section": "Checklists, highlights, links",
+    "text": "Checklists, highlights, links\n\nCreate the presentations repo\nDraft the Visual-Stimulation for Decoding protocol deck\nGluN3 figures: add ==percentage responsive==\n\n\nSpeaker notes go in a ::: {.notes} block — press S while presenting to see them."
+  },
+  {
+    "objectID": "demo-presentation.html#then-cite-the-analysis-script",
+    "href": "demo-presentation.html#then-cite-the-analysis-script",
+    "title": "Demo — Markdown to Slides",
+    "section": "Then cite the analysis script",
+    "text": "Then cite the analysis script\n\n_archives/2026/10-October/15-Wednesday-...-anr-Toy-Ntwk.py (Lab-notebook)"
+  },
+  {
+    "objectID": "demo-presentation.html#next-steps",
+    "href": "demo-presentation.html#next-steps",
+    "title": "Demo — Markdown to Slides",
+    "section": "Next steps",
+    "text": "Next steps\n\nCopy demo-presentation.qmd → rename for a new deck\nEverything renders automatically on push\nPoint Safari at the Pages URL, “Add to Home Screen” for quick access"
+  }
+]
