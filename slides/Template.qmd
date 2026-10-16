@@ -27,6 +27,10 @@ $$E = mc^2$$
 
 ![](my-figure.svg){.frame}
 
+## My slide
+
+![](fig.svg){.frame}
+
 
 ## Methodology (LaTeX & Code)
 
