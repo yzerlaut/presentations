@@ -1,0 +1,100 @@
+---
+title: "Visual Stimulation for Decoding Ambiguous Visual Scenes"
+subtitle: "Calibration protocol — draft for Sofia"
+author: "Yann Zerlaut"
+date: today
+format: revealjs
+---
+
+# Goal
+
+Decoding ambiguous visual scenes requires a **large calibration protocol** that systematically varies stimulus ambiguity along three axes:
+
+## Three experimental axes
+
+1. **Spatial ambiguity** — natural images at various degrees of ambiguity (low → high)
+2. **Feature precision** — grating orientation in a narrow range
+3. **Temporal information** — increasing temporal jitters
+
+::: {.notes}
+This is a calibration protocol: the aim is to span the decoding difficulty space, not to test a single hypothesis. The three axes can then be combined factorialy in the main experiments.
+:::
+
+---
+
+# Axis 1 — Natural images: from low to high ambiguity
+
+## Protocol
+
+- Natural image set varied at **multiple ambiguity levels**
+- morphing approach: continuous interpolation between two natural scenes
+- ambiguity quantified per image (to be defined: categorical distance metric)
+
+## To decide
+
+- [ ] number of ambiguity levels (proposal: 5)
+- [ ] image pairs per level
+- [ ] morphing metric — naturalness control
+
+::: {.notes}
+Link to the natural-image morphing scripts in Lab-notebook: `natural_image_morphs.py`, `Natural-Images-Morphing.py`, `Natural-Images-Morphing-Naturalness.py`.
+:::
+
+---
+
+# Axis 2 — Gratings: narrow orientation range
+
+## Protocol
+
+- drifting gratings, **orientation within a narrow range** around the trained orientation
+- probes the precision of orientation decoding when the alternatives are close together
+
+## To decide
+
+- [ ] range width (e.g. ±5°, ±10°)
+- [ ] step size
+- [ ] contrast / spatial frequency matching to natural images
+
+---
+
+# Axis 3 — Temporal information: increasing jitters
+
+## Protocol
+
+- same nominal stimulus, **temporal jitter** varied parametrically
+- tests how decoding relies on temporal precision vs. averaged rate codes
+
+## To decide
+
+- [ ] jitter distribution (Gaussian vs. uniform)
+- [ ] jitter magnitude steps
+- [ ] number of repetitions per jitter level
+
+---
+
+# GluN3 analysis — accompanying plan
+
+## From the todo list
+
+- add ==percentage responsive==
+- red vs green conditions
+- focus on **positive responses**, within-session dynamics
+- dynamics **over days**
+
+::: {.fragment}
+Presentation deck ↔ analysis: keep the GluN3 figures in `figures/` and cite the producing script from Lab-notebook archives here.
+:::
+
+---
+
+# Timeline & next steps
+
+- [ ] Draft the full Visual-Stimulation for Decoding with Difficult Images protocol document for Sofia
+- [ ] Finalize the three parameter tables (ambiguity levels, orientation range, jitter steps)
+- [ ] Pilot: run the calibration set, check decoding accuracy along each axis
+
+## Sources
+
+- Daily note: `2026-10-14.md` (private-notes)
+- Morphing scripts: Lab-notebook `natural_image_morphs.py` + archives
+- Related: `_archives/CodeReconf-proposal.md` (private-notes)

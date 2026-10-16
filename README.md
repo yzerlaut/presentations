@@ -19,9 +19,14 @@ Push to `main` → GitHub Actions renders → the HTML lands in `docs/` (committ
 - `docs/` — rendered output (auto-committed, don't edit by hand)
 - `slides/_quarto.yml` — shared reveal.js options (slide numbers, scrollable slides, embedded resources)
 
+## Decks
+
+- `demo-presentation.qmd` — syntax demo
+- `visual-stimulation-decoding.qmd` — Visual Stimulation for Decoding Ambiguous Visual Scenes (draft for Sofia)
+
 ## New deck
 
-Copy `slides/demo-presentation.qmd`, rename it, edit. Slides are separated by `---`; slide titles are `# ` / `## ` headings. It renders automatically on push (`docs/index.html` redirects to the demo deck — update it to your latest deck).
+Copy an existing `.qmd`, rename it, edit. Slides are separated by `---`; slide titles are `# ` / `## ` headings. It renders automatically on push (`docs/index.html` redirects to the demo deck — update it to your latest deck).
 
 ## Pairing with the other repos
 
