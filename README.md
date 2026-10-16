@@ -41,7 +41,25 @@ Copy an existing `.qmd`, rename it, edit. Slides are separated by `---`; slide t
 16:9 talk template in two variants, packaged as Quarto extensions in `_extensions/`:
 `talk-dark`, `talk-light` (+ `talk-common`, the shared layout, filters & title slide).
 
-**Install in any folder** (copies the extensions into `./_extensions/`):
+### Create a new talk
+
+```sh
+./create_new.sh ~/talks/lab-meeting-11-2026            # dark variant
+./create_new.sh ~/talks/journal-club --light           # light variant
+```
+
+creates the folder with:
+
+- `_extensions/yzerlaut/` — the template (from GitHub via `quarto add`; copied from this repo when offline)
+- `Talk.qmd` — starter deck: title slide (title from the folder name, today's date), text, figure, incremental list, thanks and acknowledgments slides
+- `figure.svg` — blank full-slide canvas to draw in (Inkscape)
+
+then `quarto preview <folder>/Talk.qmd` (or `Cmd+Shift+K` in VS Code) and edit.
+The folder must not exist yet (or be empty).
+
+### Use the template in an existing folder
+
+**Install** (copies the extensions into `./_extensions/`):
 
 ```sh
 quarto add yzerlaut/presentations
