@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Drawing canvas for a full slide frame (talk template, dark variant).
+     1180x570 px = the content area of a slide (1280x720 minus title & bottom
+     line, minus the 50px side indents, clear of the corner logo): 1 px here = 1 px on the slide, so
+     32px text = slide body text.  Page color is only the editor background
+     (the export stays transparent).  Theme colors are in the document swatches.
+     In a talk:   ![](my-figure.svg){.frame}                                  -->
+<svg
+   width="1180"
+   height="570"
+   viewBox="0 0 1180 570"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#1f1f1f"
+     bordercolor="#888888"
+     borderopacity="1"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#555555"
+     inkscape:document-units="px"
+     showguides="true"
+     inkscape:current-layer="layer-drawing">
+    <sodipodi:guide position="590.0,570" orientation="1,0" id="guide-center-v" inkscape:label="center" />
+    <sodipodi:guide position="0,285.0" orientation="0,-1" id="guide-center-h" inkscape:label="center" />
+  </sodipodi:namedview>
+  <defs id="defs1">
+    <linearGradient id="swatch-main" inkscape:swatch="solid" osb:paint="solid"><stop style="stop-color:#a0a6c7;stop-opacity:1" offset="0" /></linearGradient>
+    <linearGradient id="swatch-accent" inkscape:swatch="solid" osb:paint="solid"><stop style="stop-color:#b17d85;stop-opacity:1" offset="0" /></linearGradient>
+    <linearGradient id="swatch-orange" inkscape:swatch="solid" osb:paint="solid"><stop style="stop-color:#ffb888;stop-opacity:1" offset="0" /></linearGradient>
+    <linearGradient id="swatch-text" inkscape:swatch="solid" osb:paint="solid"><stop style="stop-color:#e4e5ee;stop-opacity:1" offset="0" /></linearGradient>
+    <linearGradient id="swatch-muted" inkscape:swatch="solid" osb:paint="solid"><stop style="stop-color:#9a9cb0;stop-opacity:1" offset="0" /></linearGradient>
+  </defs>
+  <g inkscape:groupmode="layer" inkscape:label="drawing" id="layer-drawing" />
+</svg>

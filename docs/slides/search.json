@@ -63,6 +63,48 @@
     "text": "Sources\n\nDaily note: 2026-10-14.md (private-notes)\nMorphing scripts: Lab-notebook natural_image_morphs.py + archives\nRelated: _archives/CodeReconf-proposal.md (private-notes)"
   },
   {
+    "objectID": "Template.html#introduction-motivation",
+    "href": "Template.html#introduction-motivation",
+    "title": "Scientific Presentation Template",
+    "section": "Introduction & Motivation",
+    "text": "Introduction & Motivation\n\nCurrent Challenge: Static PDF slides limit data exploration.\nProposed Solution: Interactive web-based slides via Reveal.js.\n\n\\[E = mc^2\\]"
+  },
+  {
+    "objectID": "Template.html#my-slide",
+    "href": "Template.html#my-slide",
+    "title": "Scientific Presentation Template",
+    "section": "My slide",
+    "text": "My slide"
+  },
+  {
+    "objectID": "Template.html#methodology-latex-code",
+    "href": "Template.html#methodology-latex-code",
+    "title": "Scientific Presentation Template",
+    "section": "Methodology (LaTeX & Code)",
+    "text": "Methodology (LaTeX & Code)\n\nWe evaluate the differential equation:\n\n\\[\\begin{equation}\n    \\frac{dy}{dt} = r \\cdot y \\left(1 - \\frac{y}{K}\\right)\n\\end{equation}\\]\n# Example snippet embedded in slide\nimport numpy as np\ny = np.linspace(0, 10, 100)"
+  },
+  {
+    "objectID": "Template.html#results-progressive-disclosure",
+    "href": "Template.html#results-progressive-disclosure",
+    "title": "Scientific Presentation Template",
+    "section": "Results & Progressive Disclosure",
+    "text": "Results & Progressive Disclosure\n\nFirst key finding appears.\nSecond quantitative metric revealed.\nFinal conclusion drawn."
+  },
+  {
+    "objectID": "Template.html#section",
+    "href": "Template.html#section",
+    "title": "Scientific Presentation Template",
+    "section": "",
+    "text": "Thank you for your attention\nQuestions?"
+  },
+  {
+    "objectID": "Template.html#acknowledgments",
+    "href": "Template.html#acknowledgments",
+    "title": "Scientific Presentation Template",
+    "section": "Acknowledgments",
+    "text": "Acknowledgments\n\n\nLab members\n\nName Surname\nName Surname\nName Surname\n\n\nFunding"
+  },
+  {
     "objectID": "demo-presentation.html#the-workflow",
     "href": "demo-presentation.html#the-workflow",
     "title": "Demo — Markdown to Slides",
