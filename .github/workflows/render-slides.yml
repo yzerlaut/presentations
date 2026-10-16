@@ -25,7 +25,7 @@ jobs:
 
       - name: Render slides
         run: |
-          quarto render slides --to revealjs
+          quarto render slides   # (no --to: decks may use the talk-*-revealjs formats)
           printf '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=slides/demo-presentation.html"></head></html>' > docs/index.html
 
       - name: Commit rendered HTML

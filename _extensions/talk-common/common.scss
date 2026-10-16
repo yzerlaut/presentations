@@ -1,5 +1,5 @@
 // Shared layout of the talk template, used with a color file:
-//   theme: [default, <light|dark>/colors.scss, common.scss]
+//   theme: [default, colors.scss, ../talk-common/common.scss]  (in talk-<light|dark>/_extension.yml)
 // expects (from the color file): $talk-main, $talk-accent, $talk-muted
 
 /*-- scss:defaults --*/
@@ -117,7 +117,7 @@ $code-block-font-size: 0.75em;
 }
 
 // ---- content centered vertically between the title and the bottom line ----
-// (reveal `display: flex` set in talk.yml); add {.top} to a slide to opt out
+// (reveal `display: flex` set in talk-<variant>/_extension.yml); add {.top} to a slide to opt out
 .reveal .slides section {
   flex-direction: column;
 }
@@ -190,7 +190,7 @@ $code-block-font-size: 0.75em;
   img { height: 100px; width: auto; margin: 0; }
 }
 
-// ---- full-frame figure: drawn on <variant>/frame.svg (1180x570) ----
+// ---- full-frame figure: drawn on talk-<variant>/frame.svg (1180x570) ----
 // usage:  ![](my-figure.svg){.frame}
 // several Inkscape layers -> inlined svg, one layer per click (svg-layers.lua)
 // (!important: a lone image gets Quarto/reveal's r-stretch, sized inline)

@@ -1,0 +1,9 @@
+title: Talk template (shared parts)
+author: Yann Zerlaut
+version: 1.0.0
+quarto-required: ">=1.4.0"
+# shared by talk-dark & talk-light: common.scss, title-slide.html, filters, and
+#   {{< talk-logo ICM >}} / {{< talk-logo SU >}}  -> logo of the current variant
+contributes:
+  shortcodes:
+    - talk-logo.lua

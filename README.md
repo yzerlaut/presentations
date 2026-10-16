@@ -24,7 +24,7 @@ Push to `main` → GitHub Actions renders → the HTML lands in `docs/` → live
 - `figures/` — images/SVGs referenced by slides
 - `docs/` — rendered output (auto-committed, don't edit by hand)
 - `slides/_quarto.yml` — shared reveal.js options (slide numbers, scrollable slides, embedded resources)
-- `slides/light/`, `slides/dark/`, `slides/common.scss`, `slides/*.lua`, `slides/title-slide.html` — 16:9 talk template (light & dark variants), see below
+- `_extensions/` — 16:9 talk template (Quarto extensions `talk-dark`, `talk-light`), see below
 
 ## Decks
 
@@ -36,21 +36,35 @@ Push to `main` → GitHub Actions renders → the HTML lands in `docs/` → live
 
 Copy an existing `.qmd`, rename it, edit. Slides are separated by `---`; slide titles are `# ` / `## ` headings. It renders automatically on push.
 
-## Talk template
+## Talk template (Quarto extension, usable from anywhere)
 
-Start from `slides/Template.qmd` (decks must sit in `slides/`: the template paths are relative to the deck). The variant is one line in the YAML header:
+16:9 talk template in two variants, packaged as Quarto extensions in `_extensions/`:
+`talk-dark`, `talk-light` (+ `talk-common`, the shared layout, filters & title slide).
 
-```yaml
-metadata-files: [dark/talk.yml]   # or light/talk.yml
-date: "2026-10-16"
-location: "Paris Brain Institute, Paris"
+**Install in any folder** (copies the extensions into `./_extensions/`):
+
+```sh
+quarto add yzerlaut/presentations
 ```
 
-- `common.scss` — shared layout (16:9, title lines, bottom line + logo, centered content); `<variant>/colors.scss` — colors
-- `<variant>/talk.yml` — theme, logo, filters, title-slide background (`talk-bg`)
-- `title-slide.html` — title slide with `date` + `location`
-- `<variant>/frame.svg` — blank Inkscape canvas (1180×570 = slide content area); copy it, draw, then `![](my-figure.svg){.frame}`. With several Inkscape layers, the layers appear one per click (`svg-layers.lua`)
+**In the deck:**
+
+```yaml
+---
+title: "My talk"
+subtitle: "Lab Meeting"
+author: "Yann Zerlaut"
+date: "2026-10-16"
+location: "Paris Brain Institute, Paris"
+format: talk-dark-revealjs        # or talk-light-revealjs
+---
+```
+
+- full example: `slides/Template.qmd` (decks in `slides/` use the extensions through the `slides/_extensions` link)
+- figures filling a slide: copy `_extensions/talk-<variant>/frame.svg` (1180×570 = slide content area), draw, then `![](my-figure.svg){.frame}`; with several Inkscape layers, the layers appear one per click. Matplotlib: `plot_tools.set_style('slides-dark')` / `'slides-light'` gives the same size
+- logos of the current variant: `{{< talk-logo ICM >}}`, `{{< talk-logo SU >}}`
 - closing slide: `## {.thanks-slide data-state="is-thanks-slide"}`; top-aligned slide: `## Title {.top}`
+- update a deck's copy of the template: `quarto update yzerlaut/presentations`
 
 ## Pairing with the other repos
 

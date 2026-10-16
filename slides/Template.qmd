@@ -4,14 +4,9 @@ subtitle: "Lab Meeting"
 author: "Yann Zerlaut"
 date: "2026-10-16"
 location: "Paris Brain Institute, Paris"
-metadata-files: [dark/talk.yml]   # or light/talk.yml
 format:
-  revealjs:
-    width: 1280             # 16:9
-    height: 720
-    margin: 0.06
+  talk-dark-revealjs:       # or talk-light-revealjs
     transition: slide
-    slide-number: true
     chalkboard: false
     preview-links: auto
 ---
@@ -77,8 +72,8 @@ y = np.linspace(0, 10, 100)
 ### Funding
 
 ::: {.funding-logos}
-![]({{< meta talk-dir >}}/ICM.svg)
-![]({{< meta talk-dir >}}/SU.svg)
+{{< talk-logo ICM >}}
+{{< talk-logo SU >}}
 :::
 :::
 
