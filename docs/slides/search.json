@@ -1,5 +1,68 @@
 [
   {
+    "objectID": "visual-stimulation-decoding.html#three-experimental-axes",
+    "href": "visual-stimulation-decoding.html#three-experimental-axes",
+    "title": "Visual Stimulation for Decoding Ambiguous Visual Scenes",
+    "section": "Three experimental axes",
+    "text": "Three experimental axes\n\nSpatial ambiguity — natural images at various degrees of ambiguity (low → high)\nFeature precision — grating orientation in a narrow range\nTemporal information — increasing temporal jitters\n\n\nThis is a calibration protocol: the aim is to span the decoding difficulty space, not to test a single hypothesis. The three axes can then be combined factorialy in the main experiments."
+  },
+  {
+    "objectID": "visual-stimulation-decoding.html#protocol",
+    "href": "visual-stimulation-decoding.html#protocol",
+    "title": "Visual Stimulation for Decoding Ambiguous Visual Scenes",
+    "section": "Protocol",
+    "text": "Protocol\n\nNatural image set varied at multiple ambiguity levels\nmorphing approach: continuous interpolation between two natural scenes\nambiguity quantified per image (to be defined: categorical distance metric)"
+  },
+  {
+    "objectID": "visual-stimulation-decoding.html#to-decide",
+    "href": "visual-stimulation-decoding.html#to-decide",
+    "title": "Visual Stimulation for Decoding Ambiguous Visual Scenes",
+    "section": "To decide",
+    "text": "To decide\n\nnumber of ambiguity levels (proposal: 5)\nimage pairs per level\nmorphing metric — naturalness control\n\n\nLink to the natural-image morphing scripts in Lab-notebook: natural_image_morphs.py, Natural-Images-Morphing.py, Natural-Images-Morphing-Naturalness.py."
+  },
+  {
+    "objectID": "visual-stimulation-decoding.html#protocol-1",
+    "href": "visual-stimulation-decoding.html#protocol-1",
+    "title": "Visual Stimulation for Decoding Ambiguous Visual Scenes",
+    "section": "Protocol",
+    "text": "Protocol\n\ndrifting gratings, orientation within a narrow range around the trained orientation\nprobes the precision of orientation decoding when the alternatives are close together"
+  },
+  {
+    "objectID": "visual-stimulation-decoding.html#to-decide-1",
+    "href": "visual-stimulation-decoding.html#to-decide-1",
+    "title": "Visual Stimulation for Decoding Ambiguous Visual Scenes",
+    "section": "To decide",
+    "text": "To decide\n\nrange width (e.g. ±5°, ±10°)\nstep size\ncontrast / spatial frequency matching to natural images"
+  },
+  {
+    "objectID": "visual-stimulation-decoding.html#protocol-2",
+    "href": "visual-stimulation-decoding.html#protocol-2",
+    "title": "Visual Stimulation for Decoding Ambiguous Visual Scenes",
+    "section": "Protocol",
+    "text": "Protocol\n\nsame nominal stimulus, temporal jitter varied parametrically\ntests how decoding relies on temporal precision vs. averaged rate codes"
+  },
+  {
+    "objectID": "visual-stimulation-decoding.html#to-decide-2",
+    "href": "visual-stimulation-decoding.html#to-decide-2",
+    "title": "Visual Stimulation for Decoding Ambiguous Visual Scenes",
+    "section": "To decide",
+    "text": "To decide\n\njitter distribution (Gaussian vs. uniform)\njitter magnitude steps\nnumber of repetitions per jitter level"
+  },
+  {
+    "objectID": "visual-stimulation-decoding.html#from-the-todo-list",
+    "href": "visual-stimulation-decoding.html#from-the-todo-list",
+    "title": "Visual Stimulation for Decoding Ambiguous Visual Scenes",
+    "section": "From the todo list",
+    "text": "From the todo list\n\nadd ==percentage responsive==\nred vs green conditions\nfocus on positive responses, within-session dynamics\ndynamics over days\n\n\nPresentation deck ↔︎ analysis: keep the GluN3 figures in figures/ and cite the producing script from Lab-notebook archives here."
+  },
+  {
+    "objectID": "visual-stimulation-decoding.html#sources",
+    "href": "visual-stimulation-decoding.html#sources",
+    "title": "Visual Stimulation for Decoding Ambiguous Visual Scenes",
+    "section": "Sources",
+    "text": "Sources\n\nDaily note: 2026-10-14.md (private-notes)\nMorphing scripts: Lab-notebook natural_image_morphs.py + archives\nRelated: _archives/CodeReconf-proposal.md (private-notes)"
+  },
+  {
     "objectID": "demo-presentation.html#the-workflow",
     "href": "demo-presentation.html#the-workflow",
     "title": "Demo — Markdown to Slides",
