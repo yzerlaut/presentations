@@ -1,10 +1,10 @@
 --[[
   title-background.lua -- title-slide background of the talk template.
 
-  Reads the `talk-bg` metadata (set in Talks/<variant>/talk.yml): a
+  Reads the `talk-bg` metadata (set in <variant>/talk.yml): a
   comma-separated list of svgs (lines-top, lines-bottom, ICM, SU), and
   inlines them as data URIs in a <style> applied to slides with
-  data-state="is-title-slide".  Sizes/positions are in Talks/common.scss.
+  data-state="is-title-slide".  Sizes/positions are in common.scss.
   (Inlining keeps it working with `embed-resources: true`, which cannot
   handle reveal's comma-separated `data-background-image`.)
 ]]

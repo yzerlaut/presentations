@@ -1,5 +1,5 @@
 // Shared layout of the talk template, used with a color file:
-//   theme: [default, Talks/<light|dark>/colors.scss, Talks/common.scss]
+//   theme: [default, <light|dark>/colors.scss, common.scss]
 // expects (from the color file): $talk-main, $talk-accent, $talk-muted
 
 /*-- scss:defaults --*/
@@ -190,9 +190,9 @@ $code-block-font-size: 0.75em;
   img { height: 100px; width: auto; margin: 0; }
 }
 
-// ---- full-frame figure: drawn on Talks/<variant>/frame.svg (1180x570) ----
+// ---- full-frame figure: drawn on <variant>/frame.svg (1180x570) ----
 // usage:  ![](my-figure.svg){.frame}
-// several Inkscape layers -> inlined svg, one layer per click (Talks/svg-layers.lua)
+// several Inkscape layers -> inlined svg, one layer per click (svg-layers.lua)
 // (!important: a lone image gets Quarto/reveal's r-stretch, sized inline)
 .reveal .slides section img.frame,
 .reveal .slides section svg.frame {

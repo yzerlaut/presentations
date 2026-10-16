@@ -4,7 +4,7 @@ subtitle: "Lab Meeting"
 author: "Yann Zerlaut"
 date: "2026-10-16"
 location: "Paris Brain Institute, Paris"
-metadata-files: [Talks/dark/talk.yml]   # or Talks/light/talk.yml
+metadata-files: [dark/talk.yml]   # or light/talk.yml
 format:
   revealjs:
     width: 1280             # 16:9

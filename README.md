@@ -24,7 +24,7 @@ Push to `main` → GitHub Actions renders → the HTML lands in `docs/` → live
 - `figures/` — images/SVGs referenced by slides
 - `docs/` — rendered output (auto-committed, don't edit by hand)
 - `slides/_quarto.yml` — shared reveal.js options (slide numbers, scrollable slides, embedded resources)
-- `slides/Talks/` — 16:9 talk template (light & dark variants), see below
+- `slides/light/`, `slides/dark/`, `slides/common.scss`, `slides/*.lua`, `slides/title-slide.html` — 16:9 talk template (light & dark variants), see below
 
 ## Decks
 
@@ -36,20 +36,20 @@ Push to `main` → GitHub Actions renders → the HTML lands in `docs/` → live
 
 Copy an existing `.qmd`, rename it, edit. Slides are separated by `---`; slide titles are `# ` / `## ` headings. It renders automatically on push.
 
-## Talk template (`slides/Talks/`)
+## Talk template
 
-Start from `slides/Template.qmd`. The variant is one line in the YAML header:
+Start from `slides/Template.qmd` (decks must sit in `slides/`: the template paths are relative to the deck). The variant is one line in the YAML header:
 
 ```yaml
-metadata-files: [Talks/dark/talk.yml]   # or Talks/light/talk.yml
+metadata-files: [dark/talk.yml]   # or light/talk.yml
 date: "2026-10-16"
 location: "Paris Brain Institute, Paris"
 ```
 
-- `Talks/common.scss` — shared layout (16:9, title lines, bottom line + logo, centered content); `Talks/<variant>/colors.scss` — colors
-- `Talks/<variant>/talk.yml` — theme, logo, filters, title-slide background (`talk-bg`)
-- `Talks/title-slide.html` — title slide with `date` + `location`
-- `Talks/<variant>/frame.svg` — blank Inkscape canvas (1180×570 = slide content area); copy it, draw, then `![](my-figure.svg){.frame}`. With several Inkscape layers, the layers appear one per click (`Talks/svg-layers.lua`)
+- `common.scss` — shared layout (16:9, title lines, bottom line + logo, centered content); `<variant>/colors.scss` — colors
+- `<variant>/talk.yml` — theme, logo, filters, title-slide background (`talk-bg`)
+- `title-slide.html` — title slide with `date` + `location`
+- `<variant>/frame.svg` — blank Inkscape canvas (1180×570 = slide content area); copy it, draw, then `![](my-figure.svg){.frame}`. With several Inkscape layers, the layers appear one per click (`svg-layers.lua`)
 - closing slide: `## {.thanks-slide data-state="is-thanks-slide"}`; top-aligned slide: `## Title {.top}`
 
 ## Pairing with the other repos

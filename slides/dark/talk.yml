@@ -1,0 +1,21 @@
+# dark variant of the talk template -- use in a talk with:
+#   metadata-files: [dark/talk.yml]
+format:
+  revealjs:
+    theme: [default, dark/colors.scss, common.scss]
+    logo: dark/Bottom-logo.svg
+    template-partials: [title-slide.html]   # adds `location:`
+    display: flex           # slides as flex columns: content centered vertically (common.scss)
+    scrollable: false       # (repo default is true) would clip the title lines
+filters:
+  - svg-layers.lua         # multi-layer svg figures: one layer per click
+  - title-background.lua   # title-slide background from `talk-bg`
+# title-slide background (inlined by title-background.lua), order matters:
+#   lines-top, lines-bottom, ICM, SU (sizes/positions in common.scss)
+talk-dir: dark      # folder of this variant's svgs, e.g. for logos in slides
+date-format: long   # e.g. "October 16, 2026"
+talk-bg: "dark/lines-top.svg,dark/lines-bottom.svg,dark/ICM.svg,dark/SU.svg"
+title-slide-attributes:
+  data-state: is-title-slide   # title layout, hides corner logo & bottom line
+resources:
+  - dark/*.svg
