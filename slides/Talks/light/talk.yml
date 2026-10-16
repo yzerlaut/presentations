@@ -1,0 +1,21 @@
+# light variant of the talk template -- use in a talk with:
+#   metadata-files: [Talks/light/talk.yml]
+format:
+  revealjs:
+    theme: [default, Talks/light/colors.scss, Talks/common.scss]
+    logo: Talks/light/Bottom-logo.svg
+    template-partials: [Talks/title-slide.html]   # adds `location:`
+    display: flex           # slides as flex columns: content centered vertically (Talks/common.scss)
+    scrollable: false       # (repo default is true) would clip the title lines
+filters:
+  - Talks/svg-layers.lua         # multi-layer svg figures: one layer per click
+  - Talks/title-background.lua   # title-slide background from `talk-bg`
+# title-slide background (inlined by Talks/title-background.lua), order matters:
+#   lines-top, lines-bottom, ICM, SU (sizes/positions in Talks/common.scss)
+talk-dir: Talks/light      # folder of this variant's svgs, e.g. for logos in slides
+date-format: long   # e.g. "October 16, 2026"
+talk-bg: "Talks/light/lines-top.svg,Talks/light/lines-bottom.svg,Talks/light/ICM.svg,Talks/light/SU.svg"
+title-slide-attributes:
+  data-state: is-title-slide   # title layout, hides corner logo & bottom line
+resources:
+  - Talks/light/*.svg

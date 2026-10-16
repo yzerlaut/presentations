@@ -1,0 +1,210 @@
+// Shared layout of the talk template, used with a color file:
+//   theme: [default, Talks/<light|dark>/colors.scss, Talks/common.scss]
+// expects (from the color file): $talk-main, $talk-accent, $talk-muted
+
+/*-- scss:defaults --*/
+
+// smaller fonts (Quarto default root size is 40px)
+$presentation-font-size-root: 32px;
+$presentation-h1-font-size: 1.8em;
+$presentation-h2-font-size: 1.4em;
+$presentation-h3-font-size: 1.15em;
+$code-block-font-size: 0.75em;
+
+/*-- scss:rules --*/
+
+// ---- title (& thanks) slide: the 4 pieces of Title.svg, placed as in Title.svg ----
+// images given (in this order) by `data-background-image` in the talk:
+//   lines-top, lines-bottom, ICM, SU
+// geometry from Title.svg (1280x720 px): --u = 1% of a 16:9 slide height,
+// so pieces scale with the window and never overflow narrow windows;
+// lines stretch to the full window width (preserveAspectRatio="none").
+:root {
+  --u: min(1vh, 0.5625vw); // = 1% of the height of the (16:9) slide area
+}
+.is-title-slide .slide-background.present .slide-background-content {
+  background-repeat: no-repeat !important;
+  background-size:
+    100% calc(17.57 * var(--u)),                  // lines-top    1278x126.5
+    100% calc(22.54 * var(--u)),                  // lines-bottom 1283x162.3
+    auto calc(14.77 * var(--u)),                  // ICM           288x106.4
+    auto calc(15.82 * var(--u)) !important;       // SU            284x113.9
+  background-position:
+    left 0 top calc(4.95 * var(--u)),             // y = 35.7
+    left 0 bottom calc(16.87 * var(--u)),         // bottom at y = 598.5
+    left 11.05vw bottom calc(5.84 * var(--u)),    // x = 141.4, bottom at 677.9
+    right 13.55vw bottom calc(6.75 * var(--u)) !important; // right at 1106.5, bottom at 671.4
+}
+
+// title slide text -- laid out in slide coordinates (1280x720), not centered
+#title-slide {
+  display: block !important; // own layout, not the flex centering of other slides
+  top: 0 !important;
+  height: 720px;
+  box-sizing: border-box;
+  padding-top: 190px !important; // title just below the top lines
+  text-align: center;
+  .title {
+    font-size: 1.8em;
+    color: $talk-main;
+  }
+  .subtitle {
+    color: $talk-accent;
+  }
+  .quarto-title-author-name {
+    font-size: 1.2em;
+  }
+  // date & location: middle-left, just above the bottom lines,
+  // left-aligned with the ICM logo
+  .talk-when-where {
+    position: absolute;
+    left: 110px;
+    bottom: 225px;
+    text-align: left;
+    font-size: 0.75em;
+    line-height: 1.3;
+    p { margin: 0; }
+    .date { color: $talk-main; font-weight: 600; }
+    .location { color: $talk-muted; }
+  }
+}
+
+// ---- frame: logo bottom-right + line from the left edge to the logo ----
+// sizes in viewport units so they follow window resizing
+// (--u, defined above, keeps them sane for windows narrower than 16:9)
+:root {
+  --logo-h: calc(9 * var(--u));
+  --logo-w: calc(var(--logo-h) * 1.4634); // Bottom-logo.svg aspect ratio
+  --logo-pad: calc(1.2 * var(--u));
+  --frame-line: calc(0.4 * var(--u));
+}
+
+.reveal .slide-logo {
+  max-height: none !important;
+  height: var(--logo-h) !important;
+  width: auto;
+  bottom: var(--logo-pad) !important;
+  right: var(--logo-pad) !important;
+}
+
+.reveal::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: calc(var(--logo-pad) + var(--logo-w) + var(--logo-pad));
+  bottom: calc(var(--logo-pad) + var(--logo-h) / 2);
+  height: var(--frame-line);
+  background-color: $talk-main;
+  pointer-events: none;
+  z-index: 1;
+}
+
+// slide number in the bottom-right corner, under the head of the logo
+.reveal .slide-number {
+  top: auto !important;
+  bottom: calc(var(--logo-pad) / 2) !important;
+  right: calc(var(--logo-pad) / 2) !important;
+  font-size: calc(1.5 * var(--u));
+  padding: 0;
+  background-color: transparent;
+  color: $talk-main;
+}
+
+// no frame on the title slide
+.is-title-slide .reveal .slide-logo,
+.is-title-slide .reveal::after {
+  display: none !important;
+}
+
+// ---- content centered vertically between the title and the bottom line ----
+// (reveal `display: flex` set in talk.yml); add {.top} to a slide to opt out
+.reveal .slides section {
+  flex-direction: column;
+}
+.reveal .slides section.slide:not(#title-slide) {
+  height: 720px;
+  box-sizing: border-box;
+  padding-bottom: 50px !important; // keep clear of the bottom line / logo
+  > h2 { flex: none; }
+  > :not(h2) { margin-left: 50px; margin-right: 50px; } // indent content (not titles)
+  > h2 + * { margin-top: auto; }
+  > :last-child { margin-bottom: auto; }
+  &.top {
+    > h2 + * { margin-top: 0; }
+    > :last-child { margin-bottom: 0; }
+  }
+}
+
+// ---- slide titles: higher up, with a line running to the right edge ----
+.reveal .slides section.slide > h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: -0.15em;
+  &::after {
+    content: "";
+    flex: 1 1 2em;
+    min-width: 2em;
+    height: 3px;
+    margin-right: -40px; // run into the slide margin, towards the edge
+    background-color: $talk-main;
+  }
+}
+
+// ---- closing slide: an "empty" content slide ----
+// usage:  ## {.thanks-slide data-state="is-thanks-slide"}
+// the (empty) title keeps its line, now running across the full width;
+// bottom line & corner logo as on the other slides
+.reveal .slides section.thanks-slide {
+  text-align: center;
+  > h2 {
+    min-height: 1.2em;
+    margin-left: -41px; // over the slide margins, to the window edges
+    &::after { margin-right: -41px; }
+  }
+  p { margin: 0.25em 0; }
+  .thanks-text {
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: $talk-main;
+  }
+  .thanks-questions {
+    display: inline-block;
+    margin-top: 0.4em;
+    font-size: 0.95em;
+    font-style: italic;
+    color: $talk-main;
+  }
+  .thanks-author { font-size: 0.8em; color: $talk-muted; }
+}
+
+// ---- acknowledgments: logos stacked in the "Funding" column ----
+.reveal .funding-logos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 20px;
+  p { margin: 0; display: contents; }
+  img { height: 100px; width: auto; margin: 0; }
+}
+
+// ---- full-frame figure: drawn on Talks/<variant>/frame.svg (1180x570) ----
+// usage:  ![](my-figure.svg){.frame}
+// several Inkscape layers -> inlined svg, one layer per click (Talks/svg-layers.lua)
+// (!important: a lone image gets Quarto/reveal's r-stretch, sized inline)
+.reveal .slides section img.frame,
+.reveal .slides section svg.frame {
+  width: 1180px !important;
+  height: 570px !important;
+  max-width: none;
+  max-height: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.reveal .slides section p:has(> img.frame),
+.reveal .slides section p:has(> svg.frame) {
+  margin-top: 0;
+  margin-bottom: 0;
+}

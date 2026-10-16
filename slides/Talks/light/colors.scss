@@ -1,0 +1,11 @@
+// light variant -- colors of the svgs in Talks/light/
+/*-- scss:defaults --*/
+
+$talk-main: #1d2769;    // navy: lines, headings, SU logo
+$talk-accent: #ac182e;  // red
+$talk-muted: #555555;
+
+$body-bg: #ffffff;
+$body-color: #222222;
+$link-color: $talk-accent;
+$presentation-heading-color: $talk-main;

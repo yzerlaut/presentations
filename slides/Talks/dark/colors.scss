@@ -1,0 +1,11 @@
+// dark variant -- colors of the svgs in Talks/dark/
+/*-- scss:defaults --*/
+
+$talk-main: #a0a6c7;    // lilac-blue: lines, headings
+$talk-accent: #b17d85;  // muted red
+$talk-muted: #9a9cb0;
+
+$body-bg: #1f1f1f;      // same as plot_tools dark style (figure.facecolor)
+$body-color: #e4e5ee;
+$link-color: #d39aa2;
+$presentation-heading-color: $talk-main;
