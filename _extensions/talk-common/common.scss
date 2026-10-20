@@ -133,12 +133,33 @@ $code-block-font-size: 0.75em;
   li + li { margin-top: var(--talk-spacing, 1.5em); }
   // full-frame figures (1180 px wide) and the centered thanks slide keep the 50px margins
   > p:has(> .frame), &.thanks-slide > :not(h2) { margin-left: 50px; }
+  // (bottom notes -- .aside / .ref -- are out of the flow: ignored for the centering)
   > h2 + * { margin-top: auto; }
-  > :last-child { margin-bottom: auto; }
+  > :nth-last-child(1 of :not(aside, .aside, .ref)) { margin-bottom: auto; }
   &.top {
     > h2 + * { margin-top: 0; }
-    > :last-child { margin-bottom: 0; }
+    > :nth-last-child(1 of :not(aside, .aside, .ref)) { margin-bottom: 0; }
   }
+}
+
+// ---- bottom notes (references, credits...):  ::: aside  or  ::: {.ref} ----
+// at the bottom of the slide, just above the bottom line, aligned with the
+// content, smaller & in the muted color (the block keeps the normal font size
+// so that the indent matches the content; its children are smaller)
+.reveal .slides section.slide aside,          // ::: aside  (Quarto writes <aside>)
+.reveal .slides section.slide div.aside,
+.reveal .slides section.slide div.ref {
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  right: 150px;              // clear of the corner logo
+  margin: 0 !important;
+  padding-left: var(--talk-indent, 4em);
+  font-size: 1em;
+  color: $talk-muted;
+  text-align: left;
+  p { font-size: 0.6em; line-height: 1.3; margin: 0.15em 0; }
+  a { color: inherit; text-decoration: underline; }
 }
 
 // ---- slide titles: higher up, with a line running to the right edge ----

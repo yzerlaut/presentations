@@ -26,8 +26,6 @@
      inkscape:document-units="px"
      showguides="true"
      inkscape:current-layer="layer-drawing">
-    <sodipodi:guide position="590.0,570" orientation="1,0" id="guide-center-v" inkscape:label="center" />
-    <sodipodi:guide position="0,285.0" orientation="0,-1" id="guide-center-h" inkscape:label="center" />
   </sodipodi:namedview>
   <defs id="defs1">
     <linearGradient id="swatch-main" inkscape:swatch="solid" osb:paint="solid"><stop style="stop-color:#a0a6c7;stop-opacity:1" offset="0" /></linearGradient>
