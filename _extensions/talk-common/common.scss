@@ -126,7 +126,13 @@ $code-block-font-size: 0.75em;
   box-sizing: border-box;
   padding-bottom: 50px !important; // keep clear of the bottom line / logo
   > h2 { flex: none; }
-  > :not(h2) { margin-left: 50px; margin-right: 50px; } // indent content (not titles)
+  // indent content (not titles): {indent=...} / slide-indent (slide-options.lua), default 4em
+  > :not(h2) { margin-left: var(--talk-indent, 4em); margin-right: 50px; }
+  // vertical gap between items: {spacing=...} / slide-spacing (slide-options.lua), default 1.5em
+  --r-block-margin: var(--talk-spacing, 1.5em);
+  li + li { margin-top: var(--talk-spacing, 1.5em); }
+  // full-frame figures (1180 px wide) and the centered thanks slide keep the 50px margins
+  > p:has(> .frame), &.thanks-slide > :not(h2) { margin-left: 50px; }
   > h2 + * { margin-top: auto; }
   > :last-child { margin-bottom: auto; }
   &.top {

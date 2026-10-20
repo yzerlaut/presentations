@@ -4,6 +4,10 @@ version: 1.0.0
 quarto-required: ">=1.4.0"
 # shared by talk-dark & talk-light: common.scss, title-slide.html, filters, and
 #   {{< talk-logo ICM >}} / {{< talk-logo SU >}}  -> logo of the current variant
+#   {{< vspace 3em >}}                            -> vertical space (default 1em)
+#   {{< hspace 4em >}}                            -> horizontal space in a line (default 1em)
 contributes:
   shortcodes:
     - talk-logo.lua
+    - vspace.lua
+    - hspace.lua

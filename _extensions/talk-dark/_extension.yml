@@ -21,5 +21,6 @@ contributes:
       filters:
         - ../talk-common/svg-layers.lua         # multi-layer svg figures: one layer per click
         - ../talk-common/title-background.lua   # title-slide background (lines + logos)
+        - ../talk-common/slide-options.lua      # {indent=..} {spacing=..} on slides, slide-indent/slide-spacing in YAML
       title-slide-attributes:
         data-state: is-title-slide   # title layout, hides corner logo & bottom line
