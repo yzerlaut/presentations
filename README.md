@@ -80,6 +80,8 @@ format: talk-dark-revealjs        # or talk-light-revealjs
 
 - full example: `slides/Template.qmd` (decks in `slides/` use the extensions through the `slides/_extensions` link)
 - figures filling a slide: copy `_extensions/talk-<variant>/frame.svg` (1180×570 = slide content area), draw, then `![](my-figure.svg){.frame}`; with several Inkscape layers, the layers appear one per click. Matplotlib: `plot_tools.set_style('slides-dark')` / `'slides-light'` gives the same size
+- images outside the deck folder (e.g. pasted in Obsidian: `![](../../_attachments/Pasted%20image%20....png)`) are embedded in the html, so they also show in `quarto preview`; if the path is wrong, the file name is looked up in the `_attachments/` folders of the parent directories
+- images outside the deck folder (e.g. pasted in Obsidian: `![](../../_attachments/Pasted%20image%20....png)`) are embedded in the html, so that they also show in `quarto preview`; if the path is wrong, the file name is looked up in the `_attachments/` folders of the parent directories
 - logos of the current variant: `{{< talk-logo ICM >}}`, `{{< talk-logo SU >}}`
 - vertical space: `{{< vspace 3em >}}` (any CSS length: `2em`, `40px`, ...; a bare number means `em`; default `1em`), on its own line or inside a paragraph
 - horizontal space in a line: `Label{{< hspace 4em >}}value` (same units, default `1em`); at the start of a line it indents that line
@@ -87,6 +89,16 @@ format: talk-dark-revealjs        # or talk-light-revealjs
 - slide layout: `## Title {indent=5em spacing=0.8em}` sets the left indent of the slide content (default `4em`) and the vertical gap between items (paragraphs, lists, list items; default `1.5em`); deck-wide defaults in the YAML header: `slide-indent: 4em`, `slide-spacing: 0.6em` (a slide's own options win)
 - closing slide: `## {.thanks-slide data-state="is-thanks-slide"}`; top-aligned slide: `## Title {.top}`
 - update a deck's copy of the template: `quarto update yzerlaut/presentations`
+
+## Paste images in VS Code (like Obsidian)
+
+`vscode-paste-figure/` is a tiny VS Code extension: `Cmd+V` of an image (screenshot, copied figure) in a `.qmd`
+saves it as `figures/pasted-<date>.png` next to the deck and inserts `![](figures/pasted-<date>.png)`
+(folder: setting `pasteFigure.folder`). Install:
+
+```sh
+cd vscode-paste-figure && npx @vscode/vsce package --allow-missing-repository --skip-license -o paste-figure.vsix && code --install-extension paste-figure.vsix
+```
 
 ## Pairing with the other repos
 

@@ -20,6 +20,7 @@ contributes:
       talk-variant: dark          # used by the talk-common filters & shortcodes
       filters:
         - ../talk-common/svg-layers.lua         # multi-layer svg figures: one layer per click
+        - ../talk-common/external-images.lua    # images outside the deck folder (e.g. Obsidian _attachments/) embedded in the html
         - ../talk-common/title-background.lua   # title-slide background (lines + logos)
         - ../talk-common/slide-options.lua      # {indent=..} {spacing=..} on slides, slide-indent/slide-spacing in YAML
       title-slide-attributes:

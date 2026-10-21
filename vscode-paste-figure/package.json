@@ -1,0 +1,25 @@
+{
+  "name": "paste-figure",
+  "displayName": "Paste figure (qmd)",
+  "description": "Paste an image from the clipboard into a .qmd: saved as figures/pasted-<date>.png, linked in the deck",
+  "version": "0.1.0",
+  "publisher": "yzerlaut",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/yzerlaut/presentations" },
+  "engines": { "vscode": "^1.97.0" },
+  "categories": ["Other"],
+  "activationEvents": ["onLanguage:quarto"],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Paste figure",
+      "properties": {
+        "pasteFigure.folder": {
+          "type": "string",
+          "default": "figures",
+          "description": "Folder (relative to the .qmd) where pasted images are saved"
+        }
+      }
+    }
+  }
+}

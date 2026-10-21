@@ -131,6 +131,13 @@ $code-block-font-size: 0.75em;
   // vertical gap between items: {spacing=...} / slide-spacing (slide-options.lua), default 1.5em
   --r-block-margin: var(--talk-spacing, 1.5em);
   li + li { margin-top: var(--talk-spacing, 1.5em); }
+  // lone images (directly in the slide or alone in a paragraph): centered, not indented
+  > img, > p:has(> img:only-child) { margin-left: auto; margin-right: auto; align-self: center; }
+  // images never higher than the content area below the title (~530px: frame.svg area minus margins),
+  // keeping their aspect ratio (reveal's r-stretch can't see the overflow of these
+  // fixed-height flex slides); lone images also shrink to the space left on the slide
+  img:not(.frame) { max-height: 530px; max-width: 100%; object-fit: contain; }
+  > img { min-height: 0; flex-shrink: 1; }
   // full-frame figures (1180 px wide) and the centered thanks slide keep the 50px margins
   > p:has(> .frame), &.thanks-slide > :not(h2) { margin-left: 50px; }
   // (bottom notes -- .aside / .ref -- are out of the flow: ignored for the centering)
