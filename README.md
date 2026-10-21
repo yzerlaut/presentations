@@ -52,7 +52,7 @@ creates the folder with:
 
 - `_extensions/yzerlaut/` — the template (from GitHub via `quarto add`; copied from this repo when offline)
 - `Talk.qmd` — starter deck: title slide (title from the folder name, today's date), text, figure, incremental list, thanks and acknowledgments slides
-- `figure.svg` — blank full-slide canvas to draw in (Inkscape)
+- `figures/` — the figures of the deck, with `figure.svg`, a blank full-slide canvas to draw in (Inkscape); images pasted in VS Code also go there
 
 then `quarto preview <folder>/Talk.qmd` (or `Cmd+Shift+K` in VS Code) and edit.
 The folder must not exist yet (or be empty).

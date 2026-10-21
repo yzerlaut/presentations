@@ -10,7 +10,8 @@
 #   <folder>/_extensions/yzerlaut/   the template (quarto add yzerlaut/presentations,
 #                                    or a copy of this repo's _extensions/ when offline)
 #   <folder>/Talk.qmd                starter deck
-#   <folder>/figure.svg              blank Inkscape canvas (full slide frame)
+#   <folder>/figures/figure.svg      blank Inkscape canvas (full slide frame);
+#                                    figures/ also receives images pasted in VS Code
 set -euo pipefail
 
 usage() { sed -n '2,13p' "$0" | sed 's/^# \{0,1\}//'; exit 1; }
@@ -46,7 +47,8 @@ if ! quarto add yzerlaut/presentations --no-prompt >/dev/null 2>&1; then
 fi
 
 # --- blank figure canvas
-cp "_extensions/yzerlaut/talk-$variant/frame.svg" figure.svg
+mkdir -p figures
+cp "_extensions/yzerlaut/talk-$variant/frame.svg" figures/figure.svg
 
 # --- starter deck
 title="$(basename "$folder" | tr '_-' '  ')"
@@ -69,10 +71,10 @@ format:
 
 ## A figure
 
-<!-- figure.svg: blank 1180x570 canvas = the free area of a slide.
+<!-- figures/figure.svg: blank 1180x570 canvas = the free area of a slide.
      Draw in Inkscape (each extra layer appears on the next click),
      or save a matplotlib figure made with plot_tools.set_style('slides-$variant') -->
-![](figure.svg){.frame}
+![](figures/figure.svg){.frame}
 
 ## Results {.top}
 
@@ -112,4 +114,5 @@ EOF
 
 echo "created $folder/ ($variant variant):"
 echo "  Talk.qmd     the deck   -> quarto preview $folder/Talk.qmd"
-echo "  figure.svg   blank full-slide figure (Inkscape)"
+echo "  figures/     figures of the deck (pasted images land here too)"
+echo "    figure.svg blank full-slide figure (Inkscape)"
