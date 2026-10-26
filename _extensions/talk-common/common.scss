@@ -150,23 +150,33 @@ $code-block-font-size: 0.75em;
 }
 
 // ---- bottom notes (references, credits...):  ::: aside  or  ::: {.ref} ----
-// at the bottom of the slide, just above the bottom line, aligned with the
-// content, smaller & in the muted color (the block keeps the normal font size
-// so that the indent matches the content; its children are smaller)
-.reveal .slides section.slide aside,          // ::: aside  (Quarto writes <aside>)
-.reveal .slides section.slide div.aside,
-.reveal .slides section.slide div.ref {
-  position: absolute;
-  bottom: 28px;
-  left: 0;
-  right: 150px;              // clear of the corner logo
-  margin: 0 !important;
-  padding-left: var(--talk-indent, 4em);
-  font-size: 1em;
-  color: $talk-muted;
-  text-align: left;
-  p { font-size: 0.6em; line-height: 1.3; margin: 0.15em 0; }
-  a { color: inherit; text-decoration: underline; }
+// anchored at the bottom of the slide, just above the bottom line, aligned with
+// the content, smaller & in the muted color. They are part of the slide layout:
+// the content is centered in the space left above them, and images / full-frame
+// figures shrink (keeping their aspect ratio) so that they never overlap them.
+// (the block keeps the normal font size so that the indent matches the content)
+.reveal .slides section.slide {
+  > aside, > div.aside, > div.ref {   // ::: aside -> <aside> (Quarto), ::: {.ref}
+    order: 1000;                      // always last, wherever written in the slide
+    flex: none;
+    position: static;
+    margin: 0.4em 0 0 0 !important;
+    padding-left: var(--talk-indent, 4em);
+    padding-right: 150px;             // clear of the corner logo
+    font-size: 1em;
+    color: $talk-muted;
+    text-align: left;
+    p { font-size: 0.6em; line-height: 1.3; margin: 0.15em 0; }
+    a { color: inherit; text-decoration: underline; }
+  }
+  &:has(> aside, > div.aside, > div.ref) {
+    padding-bottom: 24px !important;
+    // lone images & full-frame figures shrink to the space left
+    > img, > p:has(> img:only-child), > p:has(> .frame) { flex: 0 1 auto; min-height: 0; }
+    > p:has(> img:only-child) > img { max-height: 100%; }
+    > p:has(> .frame) > .frame { height: 100% !important; width: auto !important; max-height: 570px; }
+    > p:has(> .frame) { margin-left: auto !important; margin-right: auto !important; }
+  }
 }
 
 // ---- slide titles: higher up, with a line running to the right edge ----

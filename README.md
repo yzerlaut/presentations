@@ -85,7 +85,7 @@ format: talk-dark-revealjs        # or talk-light-revealjs
 - logos of the current variant: `{{< talk-logo ICM >}}`, `{{< talk-logo SU >}}`
 - vertical space: `{{< vspace 3em >}}` (any CSS length: `2em`, `40px`, ...; a bare number means `em`; default `1em`), on its own line or inside a paragraph
 - horizontal space in a line: `Label{{< hspace 4em >}}value` (same units, default `1em`); at the start of a line it indents that line
-- references / credits at the bottom of a slide (small, muted, above the bottom line): a `::: aside` block (or `::: {.ref}`) anywhere in the slide
+- references / credits at the bottom of a slide (small, muted, above the bottom line): a `::: aside` block (or `::: {.ref}`) anywhere in the slide; the content is centered in the space left above them, and images / full-frame figures shrink (keeping their aspect ratio) so that they never overlap the references
 - slide layout: `## Title {indent=5em spacing=0.8em}` sets the left indent of the slide content (default `4em`) and the vertical gap between items (paragraphs, lists, list items; default `1.5em`); deck-wide defaults in the YAML header: `slide-indent: 4em`, `slide-spacing: 0.6em` (a slide's own options win)
 - closing slide: `## {.thanks-slide data-state="is-thanks-slide"}`; top-aligned slide: `## Title {.top}`
 - update a deck's copy of the template: `quarto update yzerlaut/presentations`
